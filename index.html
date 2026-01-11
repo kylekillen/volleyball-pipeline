@@ -702,32 +702,45 @@
                 padding: 12px 14px;
             }
 
-            /* Convert table to card layout on mobile */
+            /* Disable animation on mobile to avoid stacking context issues */
+            .tab-content {
+                animation: none !important;
+            }
+
+            /* Reset table elements to block on mobile (except player-details-row which toggles) */
+            .rankings-table,
+            .rankings-table thead,
+            .rankings-table tbody,
+            .rankings-table td {
+                display: block !important;
+                position: static !important;
+                transform: none !important;
+                float: none !important;
+            }
+
+            .rankings-table tr.clickable {
+                display: block !important;
+                position: static !important;
+                transform: none !important;
+                float: none !important;
+            }
+
             .rankings-table {
-                display: block;
                 border: none;
                 background: transparent;
             }
 
             .rankings-table thead {
-                display: none;
-            }
-
-            .rankings-table tbody {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
+                display: none !important;
             }
 
             .rankings-table tr.clickable {
-                display: flex;
-                flex-direction: column;
                 background: var(--light);
                 border: 1px solid var(--border);
                 border-radius: 10px;
                 padding: 14px;
-                gap: 8px;
                 margin-bottom: 12px;
+                position: relative !important; /* only this one needs relative for rank badge */
             }
 
             .rankings-table tr.clickable.expanded {
@@ -736,24 +749,17 @@
                 margin-bottom: 0;
             }
 
-            .rankings-table tr.clickable:hover {
-                background: var(--surface-elevated);
-            }
-
-            .rankings-table td {
-                display: block;
-                padding: 0;
+            .rankings-table tr.clickable td {
+                padding: 4px 0;
                 border: none;
+                background: transparent;
             }
 
-            .rankings-table td:first-child {
-                position: absolute;
+            .rankings-table tr.clickable td:first-child {
+                position: absolute !important;
                 top: 14px;
                 right: 14px;
-            }
-
-            .rankings-table tr.clickable {
-                position: relative;
+                padding: 0;
             }
 
             .club-name-cell {
@@ -773,6 +779,8 @@
             .player-count {
                 padding: 4px 10px;
                 font-size: 0.8rem;
+                display: inline-block;
+                margin-top: 4px;
             }
 
             .location-tag {
@@ -781,31 +789,37 @@
             }
 
             /* Top colleges in card */
-            .rankings-table td:nth-child(5) {
-                margin-top: 4px;
+            .rankings-table tr.clickable td:nth-child(5) {
+                margin-top: 8px;
                 padding-top: 8px;
                 border-top: 1px solid var(--border);
             }
 
-            /* Player details dropdown on mobile */
+            /* Player details dropdown - must flow inline after club card */
             .player-details-row {
                 display: none !important;
+                position: static !important;
+                transform: none !important;
             }
 
             .player-details-row.show {
                 display: block !important;
+                position: static !important;
+                transform: none !important;
                 background: var(--surface-elevated);
                 border: 1px solid var(--border);
                 border-top: none;
                 border-radius: 0 0 10px 10px;
-                margin-bottom: 12px;
+                margin: 0 0 12px 0;
+                padding: 0;
             }
 
             .player-details-row.show td {
-                display: block;
-                background: transparent;
-                padding: 12px !important;
+                display: block !important;
+                position: static !important;
+                padding: 12px;
                 border: none;
+                background: transparent;
             }
 
             .player-details-content {
@@ -819,6 +833,7 @@
                 padding: 10px 12px;
                 background: var(--light);
                 border-radius: 6px;
+                display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 4px;
