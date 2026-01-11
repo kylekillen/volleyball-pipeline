@@ -642,32 +642,175 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 8px 12px;
+            }
+
+            header {
+                padding: 16px 12px 8px;
+            }
+
             header h1 {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
             }
 
             .stats-bar {
-                gap: 15px;
+                gap: 8px;
             }
 
             .stat-item {
-                padding: 15px 20px;
+                padding: 10px 14px;
+                flex: 1;
+                min-width: 80px;
             }
 
             .stat-number {
-                font-size: 1.8rem;
+                font-size: 1.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.6rem;
+            }
+
+            .main-content {
+                padding: 16px 12px;
+                border-radius: 10px;
             }
 
             .tabs {
+                width: 100%;
                 justify-content: center;
             }
 
+            .tab {
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-bar input, .filters select {
+                width: 100%;
+                max-width: none;
+                padding: 12px 14px;
+            }
+
+            /* Make table scrollable on mobile */
             .rankings-table {
-                font-size: 0.9rem;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.85rem;
             }
 
             .rankings-table th, .rankings-table td {
-                padding: 10px;
+                padding: 10px 12px;
+                white-space: nowrap;
+            }
+
+            /* Hide location column on mobile */
+            .rankings-table th:nth-child(3),
+            .rankings-table td:nth-child(3) {
+                display: none;
+            }
+
+            .club-name-cell {
+                min-width: 150px;
+            }
+
+            .player-count {
+                padding: 4px 10px;
+                font-size: 0.8rem;
+            }
+
+            .location-tag {
+                display: none;
+            }
+
+            .player-details-content {
+                padding: 12px;
+                grid-template-columns: 1fr;
+            }
+
+            .player-detail-card {
+                padding: 10px 12px;
+            }
+
+            /* Player and College grids */
+            .players-grid, .colleges-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .player-card, .college-card {
+                padding: 16px;
+            }
+
+            .player-name {
+                font-size: 1.1rem;
+            }
+
+            .college-name {
+                font-size: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .methodology {
+                padding: 20px 16px;
+            }
+
+            .methodology h2 {
+                font-size: 1.2rem;
+            }
+
+            .methodology h3 {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 24px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .stat-item {
+                padding: 8px 10px;
+            }
+
+            .stat-number {
+                font-size: 1.1rem;
+            }
+
+            .tabs {
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .tab {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+            }
+
+            .rankings-table th, .rankings-table td {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            .rank-badge {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
             }
         }
     </style>
