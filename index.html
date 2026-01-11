@@ -716,7 +716,7 @@
             .rankings-table tbody {
                 display: flex;
                 flex-direction: column;
-                gap: 12px;
+                gap: 0;
             }
 
             .rankings-table tr.clickable {
@@ -727,6 +727,13 @@
                 border-radius: 10px;
                 padding: 14px;
                 gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .rankings-table tr.clickable.expanded {
+                border-radius: 10px 10px 0 0;
+                border-bottom: none;
+                margin-bottom: 0;
             }
 
             .rankings-table tr.clickable:hover {
@@ -786,15 +793,12 @@
             }
 
             .player-details-row.show {
-                display: flex !important;
-                flex-direction: column;
+                display: block !important;
                 background: var(--surface-elevated);
                 border: 1px solid var(--border);
                 border-top: none;
                 border-radius: 0 0 10px 10px;
-                margin-top: -12px;
-                margin-bottom: 0;
-                padding: 0;
+                margin-bottom: 12px;
             }
 
             .player-details-row.show td {
@@ -825,12 +829,6 @@
                 display: flex;
                 gap: 8px;
                 align-items: center;
-            }
-
-            /* Round bottom of expanded club card */
-            .rankings-table tr.clickable.expanded {
-                border-radius: 10px 10px 0 0;
-                margin-bottom: 0;
             }
 
             /* Player and College grids */
