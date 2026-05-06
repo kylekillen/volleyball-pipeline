@@ -1,33 +1,15 @@
-# Volleyball Pipeline — Personal OS Division
+# Volleyball Pipeline
 
-**STOP.** This project is managed by Personal OS.
+**Read the canonical briefing first:**
 
-## If you're seeing this...
+- Local: `~/.observer/wiki/briefings/volleyball-pipeline.md`
+- GitHub: https://github.com/kylekillen/observer-wiki/blob/main/briefings/volleyball-pipeline.md
 
-You launched Claude from `~/volleyball-pipeline/` directly. The full context, status, and instructions live in Google Drive.
+This file used to redirect to a Personal OS Drive folder. That redirect
+is no longer correct — context now lives in the observer-wiki briefing
+above. The project is in maintenance mode (live Vercel deployment, no
+secrets required).
 
-**To work on this project correctly:**
-1. Close this session
-2. Launch from: `Personal-OS/Code/volleyball-pipeline/Launch Volleyball Pipeline.command`
-3. Or: `cd ~/Library/CloudStorage/GoogleDrive-kyle.killen@gmail.com/My\ Drive/Personal-OS/Code/volleyball-pipeline && claude`
+Source: `https://github.com/kylekillen/volleyball-pipeline`.
 
-## Why?
-
-Personal OS is the "company" that manages all of Kyle's projects. Volleyball Pipeline is a division. The source code lives here (for git/deployment), but all context, decisions, and status tracking live in Drive so they're backed up and accessible from anywhere.
-
-## Emergency: Drive not available?
-
-If you're recovering from a failure and Drive isn't synced yet:
-
-1. This source code came from: `https://github.com/kylekillen/volleyball-pipeline`
-2. No secrets required for this project
-3. Get Google Drive syncing first, then launch from there
-
-## Quick reference (if you must work here)
-
-```bash
-open index.html              # Preview locally
-python3 -m http.server 8000  # Local server
-```
-
-But please launch from Drive for full context.
+Quick local preview: `open index.html` or `python3 -m http.server 8000`.
